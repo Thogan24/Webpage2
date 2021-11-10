@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style2.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1>Welcome to my second webpage!</h1>
+    <p>Here are some pictures of my favorite activities! Make sure you have sound on before this.</p>
+    <p>Once you are ready, scroll down, see the whole image, and click on it for the next one</p>
+    <img src="" alt="">
+    <audio src="FreddyJumpscare.mp3"></audio>
+    <script>
+        let listOfImages = ["posters-retro-soccer-ball","Freddy-Jumpscare", "trollface"];
+        let currentImageIndex = 0;
+        let imgElm = document.querySelector("img");
+        imgElm.src = listOfImages[currentImageIndex] + ".jpg";
+
+        let audioElm = document.querySelector("audio");
+        
+
+        imgElm.onclick = function (){
+            currentImageIndex += 1;
+            imgElm.src = listOfImages[currentImageIndex] + ".jpg";
+            if (currentImageIndex == 1){
+                audioElm.play()
+            }
+            if (currentImageIndex == 2){
+                currentImageIndex = 0;
+            }
+        }
+
+    </script>
+
+</body>
+</html>
